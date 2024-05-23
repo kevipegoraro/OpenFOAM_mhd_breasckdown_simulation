@@ -1,0 +1,1 @@
+1) load model in Paraview, 2) add the Cell Centers filter, 3) open up a spreadsheet view, 4) select specific boundary in Composite Data Set Index, 5) export spreadsheets's Point Data

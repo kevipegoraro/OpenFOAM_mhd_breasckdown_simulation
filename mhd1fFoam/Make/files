@@ -1,0 +1,3 @@
+mhd1fFoam.C
+
+EXE = $(FOAM_APPBIN)/mhd1fFoam

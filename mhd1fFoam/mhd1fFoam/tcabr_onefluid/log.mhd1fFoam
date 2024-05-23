@@ -1,0 +1,65 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7
+Exec   : mhd1fFoam
+Date   : Jun 27 2020
+Time   : 15:34:21
+Host   : "kevi"
+PID    : 79069
+I/O    : uncollated
+Case   : /home/kevi/OpenFOAM/kevi-7/run/tutorials/electromagnetics/mhd1fFoam/tcabr_onefluid
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading transportProperties
+
+Reading field p
+
+Reading field rho
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Reading field pB
+
+Reading field B
+
+Calculating face flux phiB
+
+
+Starting time loop
+Time = 0.005
+
+Courant Number mean: 0.00686844 max: 0.451622
+
+
+--> FOAM FATAL ERROR: 
+
+    [U[0 1 -2 0 0 0 0] ] - [convection(phiB,((2*DBU)*B))[1 -2 -2 0 0 0 0] ]
+
+    From function void Foam::checkMethod(const Foam::fvMatrix<Type>&, const Foam::DimensionedField<Type, Foam::volMesh>&, const char*) [with Type = Foam::Vector<double>]
+    in file /home/kevi/OpenFOAM/OpenFOAM-7/src/finiteVolume/lnInclude/fvMatrix.C at line 1291.
+
+FOAM aborting
+
+#0  Foam::error::printStack(Foam::Ostream&) at ??:?
+#1  Foam::error::abort() at ??:?
+#2  void Foam::checkMethod<Foam::Vector<double> >(Foam::fvMatrix<Foam::Vector<double> > const&, Foam::DimensionedField<Foam::Vector<double>, Foam::volMesh> const&, char const*) in "/home/kevi/OpenFOAM/OpenFOAM-7/platforms/linux64GccDPInt32Opt/bin/mhd1fFoam"
+#3  ? in "/home/kevi/OpenFOAM/OpenFOAM-7/platforms/linux64GccDPInt32Opt/bin/mhd1fFoam"
+#4  ? in "/home/kevi/OpenFOAM/OpenFOAM-7/platforms/linux64GccDPInt32Opt/bin/mhd1fFoam"
+#5  __libc_start_main in "/lib/x86_64-linux-gnu/libc.so.6"
+#6  ? in "/home/kevi/OpenFOAM/OpenFOAM-7/platforms/linux64GccDPInt32Opt/bin/mhd1fFoam"
+Aborted (core dumped)
